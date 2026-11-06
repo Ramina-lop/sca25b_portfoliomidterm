@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ramina Zununova — Creative Developer Portfolio</title>
+  <meta name="description" content="Портфолио Рамины Зунуновой — студентки Ala-Too College, специальность Software Development. Веб-разработка, игры и визуальный дизайн.">
+  <meta name="theme-color" content="#6B1D2C">
+
+  <!-- Иконка сайта (favicon). Позже можно заменить на файл assets/favicon.svg -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%236B1D2C'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23F3E1E6' font-family='Georgia, serif' font-style='italic'%3ER%3C/text%3E%3C/svg%3E">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== Шапка и навигация ===== -->
+  <header class="header">
+    <nav class="nav container" aria-label="Главное меню">
+      <a class="nav__logo" href="#home">Ramina Zununova</a>
+      <ul class="nav__list" id="menu">
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#skills">Навыки</a></li>
+        <li><a href="#projects">Проекты</a></li>
+        <li><a href="#experience">Опыт</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="nav__button" id="theme-button" type="button">Тёмная</button>
+        <button class="nav__button nav__toggle" id="menu-button" type="button" aria-expanded="false" aria-controls="menu">Меню</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== 1. Главная ===== -->
+    <section class="section hero" id="home">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="hero__role">Начинающий разработчик</p>
+          <h1>Рамина Зунунова</h1>
+          <p>Студентка 2 курса Ala-Too College, специальность Software Development. Изучаю Python, Java и веб-разработку, участвую в командных проектах и хакатонах.</p>
+          <div class="hero__buttons">
+            <a class="button" href="#projects">Смотреть проекты</a>
+            <a class="button button--outline" href="#contact">Связаться</a>
+          </div>
+        </div>
+        <img class="hero__photo" src="assets/ramina-lake.jpg" alt="Рамина на фоне горного озера в Кыргызстане" width="960" height="1280">
+      </div>
+    </section>
+
+    <!-- ===== 2. Обо мне ===== -->
+    <section class="section section--white" id="about">
+      <div class="container about">
+        <img class="about__photo" src="assets/6008010140566621800.jpg" alt="Рамина показывает знак мира на фоне озера" loading="lazy" width="960" height="1280">
+        <div>
+          <h2>Обо мне</h2>
+          <p>Я родилась в Кыргызстане. С 2019 по 2024 год жила в Турции, где училась в IT-лицее и впервые познакомилась с Python, HTML и C#. Сейчас снова живу дома и учусь в Ala-Too College по специальности «Программное обеспечение вычислительной техники и автоматизированных систем».</p>
+          <p>Я только начинаю путь в IT, поэтому называю себя начинающим разработчиком. Мне нравится учиться, работать в команде и соединять код с визуальным дизайном.</p>
+          <ul class="facts">
+            <li><strong>Учусь:</strong> Ala-Too College, 2 курс</li>
+            <li><strong>Живу:</strong> Кыргызстан</li>
+            <li><strong>Языки:</strong> русский, English (B2), türkçe</li>
+            <li><strong>Увлечения:</strong> рисование, музыка и пение, танцы, гитара (начальный уровень)</li>
+          </ul>
+          <figure class="about__painting">
+            <img src="assets/painting-impression.jpg" alt="Моя копия картины «Впечатление. Восходящее солнце»" loading="lazy" width="1280" height="960">
+            <figcaption>Моя копия картины «Впечатление. Восходящее солнце»</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. Навыки ===== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2>Навыки</h2>
+        <p class="section__note">Мой уровень — начальный. Здесь я показываю, что уже изучаю.</p>
+        <div class="cards cards--3">
+          <article class="card">
+            <h3>Программирование</h3>
+            <ul class="skill-list">
+              <li>Python <span class="level">развиваю</span></li>
+              <li>Java <span class="level">развиваю</span></li>
+              <li>C# <span class="level">база</span></li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Веб</h3>
+            <ul class="skill-list">
+              <li>HTML и CSS <span class="level">развиваю</span></li>
+              <li>JavaScript <span class="level">изучаю</span></li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Инструменты</h3>
+            <ul class="skill-list">
+              <li>Visual Studio Code <span class="level">использую</span></li>
+              <li>Canva <span class="level">уверенно</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. Проекты ===== -->
+    <section class="section section--white" id="projects">
+      <div class="container">
+        <h2>Проекты</h2>
+        <p class="section__note">Учебные и командные проекты. В окне «Подробнее» написано, что именно делала я.</p>
+
+        <!-- Кнопки фильтра: data-filter хранит категорию -->
+        <div class="filters">
+          <button class="filter active" type="button" data-filter="all">Все</button>
+          <button class="filter" type="button" data-filter="hackathon">Хакатоны</button>
+          <button class="filter" type="button" data-filter="design">Дизайн</button>
+          <button class="filter" type="button" data-filter="club">Клуб</button>
+        </div>
+
+        <!-- data-category — категория карточки, data-id — ключ для модального окна -->
+        <div class="cards cards--2">
+          <article class="card project" data-category="hackathon">
+            <h3>Smart Canteen</h3>
+            <p class="project__meta">Школьный хакатон, командный проект</p>
+            <p>Идея для школьной столовой, которая помогает сократить пищевые отходы и разумнее тратить бюджет.</p>
+            <button class="button button--small" type="button" data-id="canteen">Подробнее</button>
+          </article>
+
+          <article class="card project" data-category="hackathon">
+            <h3>Онлайн-визуальная новелла</h3>
+            <p class="project__meta">GameLab, AIU, трёхдневный хакатон</p>
+            <p>Командная работа над концепцией онлайн-визуальной новеллы.</p>
+            <button class="button button--small" type="button" data-id="novel">Подробнее</button>
+          </article>
+
+          <article class="card project" data-category="design">
+            <img src="assets/poster-spring-ball.jpg" alt="Афиша «Весенний бал»" loading="lazy" width="905" height="1280">
+            <h3>Афиша «Весенний бал»</h3>
+            <p class="project__meta">Canva, школьное мероприятие</p>
+            <p>Афиша в стиле почтовых марок с ботаническими иллюстрациями.</p>
+            <button class="button button--small" type="button" data-id="ball">Подробнее</button>
+          </article>
+
+          <article class="card project" data-category="design">
+            <img src="assets/poster-spring-duet.jpg" alt="Афиша «Весенний дуэт»" loading="lazy" width="905" height="1280">
+            <h3>Афиша «Весенний дуэт»</h3>
+            <p class="project__meta">Canva, школьное мероприятие</p>
+            <p>Афиша в тёплой коричнево-бордовой гамме с танцующими парами.</p>
+            <button class="button button--small" type="button" data-id="duet">Подробнее</button>
+          </article>
+
+          <article class="card project" data-category="club">
+            <h3>IT-клуб TechYard</h3>
+            <p class="project__meta">Ala-Too College</p>
+            <p>Я участница IT-клуба колледжа: учусь у других и пробую командные проекты.</p>
+            <button class="button button--small" type="button" data-id="techyard">Подробнее</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. Опыт и деятельность ===== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <h2>Опыт и деятельность</h2>
+        <ul class="timeline">
+          <li class="timeline__item">
+            <p class="timeline__date">Сейчас</p>
+            <h3>Ala-Too College и IT-клуб TechYard</h3>
+            <p>Учусь на 2 курсе Software Development, участвую в работе IT-клуба.</p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date">Хакатон GameLab, AIU</p>
+            <h3>Трёхдневный хакатон</h3>
+            <p>Работали командой над онлайн-визуальной новеллой.</p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date">Школьные годы</p>
+            <h3>Хакатон Smart Canteen</h3>
+            <p>Собирала информацию и подготовила видеопрезентацию командного проекта.</p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date">Лето 2024</p>
+            <h3>Помощница в текстильной мастерской, Стамбул</h3>
+            <p>Сортировала и складывала ткани, помогала готовить и переносить материалы.</p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date">2019 – 2024</p>
+            <h3>IT-лицей в Турции</h3>
+            <p>Изучала основы Python, HTML и C#.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 6. Контакты ===== -->
+    <section class="section section--white" id="contact">
+      <div class="container contact">
+        <div>
+          <h2>Контакты</h2>
+          <p>Напишите мне — отвечу на почту или в Instagram.</p>
+          <ul class="contact__links">
+            <li><a href="mailto:raminazununova0@gmail.com">raminazununova0@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/ccattxaxa/" target="_blank" rel="noopener noreferrer">Instagram: @ccattxaxa</a></li>
+          </ul>
+        </div>
+
+        <form class="form" id="contact-form" novalidate>
+          <div class="form__field">
+            <label for="name">Имя</label>
+            <input id="name" name="name" type="text" autocomplete="name">
+            <p class="form__error" id="name-error"></p>
+          </div>
+          <div class="form__field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email">
+            <p class="form__error" id="email-error"></p>
+          </div>
+          <div class="form__field">
+            <label for="message">Сообщение</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+            <p class="form__error" id="message-error"></p>
+          </div>
+          <button class="button" type="submit">Отправить</button>
+          <p class="form__success" id="form-success" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 Рамина Зунунова</p>
+      <a href="#home">Наверх</a>
+    </div>
+  </footer>
+
+  <!-- ===== Модальное окно проекта ===== -->
+  <dialog class="modal" id="modal" aria-labelledby="modal-title">
+    <button class="modal__close" id="modal-close" type="button" aria-label="Закрыть окно">×</button>
+    <!-- src и alt подставляет JavaScript; пока картинка скрыта -->
+    <img class="modal__image" id="modal-image" src="assets/poster-spring-ball.jpg" alt="" hidden>
+    <p class="project__meta" id="modal-meta"></p>
+    <h3 id="modal-title"></h3>
+    <p id="modal-text"></p>
+    <h4>Моя роль</h4>
+    <p id="modal-role"></p>
+  </dialog>
+
+  <!-- Кнопка «Вверх» -->
+  <a class="to-top" id="to-top" href="#home" aria-label="Наверх">↑</a>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+/* ===== 1. Переменные: цвета, шрифт, отступы ===== */
+:root {
+  --bg: #f6f8fa;          /* фон страницы */
+  --white: #ffffff;       /* фон карточек и светлых секций */
+  --on-accent: #ffffff;   /* цвет текста на акцентных кнопках */
+  --text: #1e2a35;        /* основной текст */
+  --muted: #5a6978;       /* второстепенный текст */
+  --accent: #1f7a8c;      /* главный цвет (бирюзовый, как озеро на фото) */
+  --accent-dark: #16596a; /* цвет при наведении */
+  --accent-soft: #e2f1f4; /* светлый фон для меток */
+  --border: #dde4ea;      /* границы */
+  --error: #b3261e;       /* ошибки */
+  --radius: 12px;
+  --space: 24px;
+  --font: "Manrope", Arial, sans-serif;
+  color-scheme: light;    /* светлые поля формы и полоса прокрутки */
+}
+
+/* Тёмная тема: JavaScript ставит <html data-theme="dark">,
+   и мы просто заменяем значения переменных */
+[data-theme="dark"] {
+  --bg: #12171c;
+  --white: #1b222a;
+  --on-accent: #0e1418;
+  --text: #e8edf1;
+  --muted: #9aa8b5;
+  --accent: #5bbcd0;
+  --accent-dark: #8fd3e1;
+  --accent-soft: #1f3a42;
+  --border: #2b3640;
+  --error: #ff8a80;
+  color-scheme: dark;
+}
+
+/* ===== 2. Общие стили ===== */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+[hidden] { display: none; }  /* чтобы атрибут hidden работал и у картинок */
+a { color: var(--accent); }
+h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 12px; }
+h1 { font-size: 2.75rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.25rem; }
+p { margin: 0 0 16px; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 var(--space); }
+.section { padding: 80px 0; }
+.section--white { background: var(--white); }
+.section__note { color: var(--muted); margin-bottom: 32px; }
+
+/* Видимая рамка при навигации с клавиатуры */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ===== 3. Кнопки ===== */
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  font: inherit;
+  font-weight: 700;
+  color: var(--on-accent);
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.button:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.button--outline { color: var(--accent); background: transparent; }
+.button--outline:hover { color: var(--on-accent); }
+.button--small { padding: 8px 16px; font-size: 0.9rem; }
+
+/* ===== 4. Шапка и меню ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 64px; }
+.nav__logo { font-weight: 800; color: var(--text); text-decoration: none; }
+.nav__list { display: flex; gap: 24px; }
+.nav__list a { color: var(--muted); font-weight: 500; text-decoration: none; transition: color 0.2s; }
+.nav__list a:hover { color: var(--accent); }
+.nav__actions { display: flex; gap: 8px; }
+.nav__button {
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.nav__button:hover { background: var(--accent-soft); }
+.nav__toggle { display: none; }  /* на компьютере кнопка меню скрыта */
+
+/* ===== 5. Главная ===== */
+.hero__inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+.hero__role { color: var(--accent); font-weight: 700; margin-bottom: 8px; }
+.hero__text p { color: var(--muted); font-size: 1.1rem; }
+.hero__buttons { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+.hero__photo { width: 100%; max-height: 520px; object-fit: cover; border-radius: var(--radius); }
+.hero__text, .hero__photo { animation: fade-in 0.8s ease both; }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ===== 6. Обо мне ===== */
+.about { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start; }
+.about__photo { width: 100%; border-radius: var(--radius); }
+.facts { margin: 24px 0; }
+.facts li { padding: 8px 0; border-bottom: 1px solid var(--border); }
+.about__painting { margin: 24px 0 0; max-width: 320px; }
+.about__painting img { border-radius: var(--radius); }
+.about__painting figcaption { margin-top: 8px; font-size: 0.9rem; color: var(--muted); }
+
+/* ===== 7. Карточки (навыки и проекты) ===== */
+.cards { display: grid; gap: var(--space); }
+.cards--3 { grid-template-columns: repeat(3, 1fr); }
+.cards--2 { grid-template-columns: repeat(2, 1fr); }
+
+.card {
+  padding: var(--space);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(30, 42, 53, 0.08); }
+
+.skill-list li { display: flex; justify-content: space-between; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.skill-list li:last-child { border-bottom: none; }
+.level { font-size: 0.85rem; color: var(--accent-dark); background: var(--accent-soft); padding: 2px 10px; border-radius: 20px; }
+
+/* ===== 8. Проекты ===== */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.filter {
+  padding: 8px 20px;
+  font: inherit;
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.filter:hover { background: var(--accent-soft); }
+.filter.active { color: var(--on-accent); background: var(--accent); border-color: var(--accent); }
+
+.project { background: var(--bg); }
+.project img { width: 100%; height: 220px; object-fit: cover; object-position: top; border-radius: 8px; margin-bottom: 16px; }
+.project__meta { color: var(--accent-dark); font-size: 0.9rem; font-weight: 500; margin-bottom: 8px; }
+.project.hidden { display: none; }  /* класс ставит JavaScript при фильтрации */
+
+/* ===== 9. Опыт ===== */
+.timeline { margin-top: 32px; border-left: 3px solid var(--accent-soft); padding-left: 24px; }
+.timeline__item { position: relative; padding-bottom: 32px; }
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.timeline__date { color: var(--accent-dark); font-weight: 700; margin-bottom: 4px; }
+
+/* ===== 10. Контакты и форма ===== */
+.contact { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; }
+.contact__links li { padding: 6px 0; }
+
+.form__field { margin-bottom: 16px; }
+.form label { display: block; font-weight: 700; margin-bottom: 4px; }
+.form input, .form textarea {
+  width: 100%;
+  padding: 12px;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.form .invalid { border-color: var(--error); }
+.form__error { margin: 4px 0 0; font-size: 0.9rem; color: var(--error); }
+.form__success { margin: 16px 0 0; font-weight: 700; color: var(--accent-dark); }
+
+/* ===== 11. Модальное окно ===== */
+.modal {
+  width: min(560px, calc(100% - 32px));
+  max-height: 90vh;
+  padding: 32px;
+  color: var(--text);
+  background: var(--white);
+  border: none;
+  border-radius: var(--radius);
+}
+.modal[open] { animation: fade-in 0.25s ease; }
+.modal::backdrop { background: rgba(30, 42, 53, 0.55); }
+.modal__image { width: 100%; max-height: 280px; object-fit: cover; object-position: top; border-radius: 8px; margin-bottom: 16px; }
+.modal__close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== 12. Подвал ===== */
+.footer { padding: 24px 0; color: var(--muted); border-top: 1px solid var(--border); }
+.footer__inner { display: flex; justify-content: space-between; align-items: center; }
+.footer p { margin: 0; }
+
+/* ===== 13. Адаптивность ===== */
+@media (max-width: 900px) {
+  .cards--3 { grid-template-columns: 1fr; }
+  .hero__inner, .about, .contact { grid-template-columns: 1fr; gap: 32px; }
+  .hero__photo { max-height: 420px; }
+  .about__photo { max-width: 400px; }
+}
+
+@media (max-width: 700px) {
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.6rem; }
+  .section { padding: 56px 0; }
+  .cards--2 { grid-template-columns: 1fr; }
+
+  /* Мобильное меню: по умолчанию скрыто, JS добавляет класс open */
+  .nav { flex-wrap: wrap; }
+  .nav__toggle { display: block; }
+  .nav__list { display: none; flex-direction: column; gap: 0; width: 100%; padding-bottom: 12px; order: 3; }
+  .nav__list.open { display: flex; }
+  .nav__list a { display: block; padding: 10px 0; }
+}
+
+/* ===== Кнопка «Вверх» ===== */
+.to-top {
+  position: fixed;          /* всегда в углу экрана */
+  right: 24px;
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--on-accent);
+  background: var(--accent);
+  border-radius: 50%;
+  text-decoration: none;
+  opacity: 0;               /* по умолчанию невидима */
+  visibility: hidden;       /* и недоступна для клика и Tab */
+  transition: opacity 0.3s, visibility 0.3s, background 0.2s;
+}
+.to-top:hover { background: var(--accent-dark); }
+
+/* Этот класс добавляет JavaScript, когда страница прокручена вниз */
+.to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Если у человека отключены анимации в системе */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
